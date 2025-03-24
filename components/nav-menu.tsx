@@ -19,6 +19,11 @@ const links = [
         text: "Privacy",
         href: "/privacy"
     },
+    {
+        text: "Contribute",
+        href: "https://github.com/maramal/qr-safe",
+        blank: true
+    }
 ]
 
 export default function NavMenu() {
@@ -33,7 +38,7 @@ export default function NavMenu() {
 
                 <div className="ml-4 flex-1 space-x-4">
                     {links.map((link, i) => (
-                        <Link href={link.href} key={i} className="hover:underline underline-offset-4">
+                        <Link href={link.href} key={i} className="hover:underline underline-offset-4" target={link.blank ? "_blank" : ""}>
                             {link.text}
                         </Link>
                     ))}
