@@ -62,6 +62,13 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 SUPABASE_URL=your_supabase_url
 SUPABASE_KEY=your_supabase_key
 GOOGLE_SAFE_BROWSING_API_KEY=your_google_safe_browsing_api_key
+ENCRYPTION_SECRET=32bytes_64chars_secret_enrcyption
+```
+
+To generate the 64 characters (32 bytes) for the environment variable `ENCRYPTION_SECRET` you need to run this command:
+
+```bash
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 ```
 
 Run the development server:
