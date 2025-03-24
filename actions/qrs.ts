@@ -104,8 +104,6 @@ export async function submitQRCode(
         // Generar QR directamente en memoria
         const qrCodeWithLogoBuffer = await generateQRCodeWithLogo(qrContentUrl)
 
-        console.log('QR CODE WITH LOGO BUFFER', qrCodeWithLogoBuffer)
-
         // Subir directamente a Supabase (sin usar almacenamiento local)
         const filePath = await uploadFile(qrCodeWithLogoBuffer, fileDestination)
 
