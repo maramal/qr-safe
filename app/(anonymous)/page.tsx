@@ -1,11 +1,12 @@
 "use client"
 
+import { useActionState } from "react";
+import { QrCode, Lock } from "lucide-react";
+import Image from "next/image";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { QrCode, Lock } from "lucide-react";
-import Image from "next/image";
-import { useActionState } from "react";
 import { submitQRCode } from "@/actions/qrs";
 
 export default function HomePage() {

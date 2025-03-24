@@ -27,6 +27,6 @@ export async function isUrlSafe(url: string): Promise<boolean> {
 
     console.log(data)
 
-    // Si hay matches, significa que la URL es peligrosa
+    // If there are matches, the URL is not safe
     return !data.matches;
 }

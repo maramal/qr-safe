@@ -1,9 +1,10 @@
 "use server"
 
+import { redirect, RedirectType } from "next/navigation"
+
 import { createClient } from "@/utils/supabase/server"
 import { getURL, isTrustedURL } from "@/utils/urls"
 import { generateQRCodeWithLogo } from "@/utils/qr"
-import { redirect, RedirectType } from "next/navigation"
 import { isUrlSafe } from "@/utils/google-safe-browsing"
 
 async function createQRCode(url: URL) {
@@ -82,13 +83,13 @@ export async function submitQRCode(
             throw new Error("URL validation failed")
         }
 
-        // Validación con Google Safe Browsing
+        // Google Safe Browsing Validation
         const safeBrowsingResult = await isUrlSafe(url.href)
         if (!safeBrowsingResult) {
             throw new Error("URL detected as unsafe by Google Safe Browsing")
         }
 
-        // Verificar si ya existe un QR Code para la URL
+        // Verify if there is an existing QR code for the specified URL
         const existingQRCode = await getExistingQRCode(url)
         if (existingQRCode) {
             redirect(`/qr/${existingQRCode.id}`, RedirectType.push)
@@ -97,14 +98,14 @@ export async function submitQRCode(
         const recordId = await createQRCode(url)
         const fileDestination = `${recordId}.png`
 
-        // Generar URL dinámica basada en host actual
+        // Generate a dynamic URL based in the current host
         const hostUrl = process.env.NEXT_PUBLIC_SITE_URL!
         const qrContentUrl = `${hostUrl}/token/${recordId}`
 
-        // Generar QR directamente en memoria
+        // Generate QR directly in memory
         const qrCodeWithLogoBuffer = await generateQRCodeWithLogo(qrContentUrl)
 
-        // Subir directamente a Supabase (sin usar almacenamiento local)
+        // Upload the QR to Supabase
         const filePath = await uploadFile(qrCodeWithLogoBuffer, fileDestination)
 
         await updateQRCode(recordId, filePath)

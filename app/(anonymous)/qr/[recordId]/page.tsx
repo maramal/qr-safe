@@ -1,13 +1,14 @@
 "use client"
 
-import { getQRCode } from "@/actions/qrs";
+import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
+import { toast } from "sonner";
+import { Download, Copy, Share2 } from "lucide-react";
 import Image from "next/image";
+
+import { getQRCode } from "@/actions/qrs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Download, Copy, Share2 } from "lucide-react";
-import { useEffect, useState } from "react";
-import { toast } from "sonner";
 
 function copyQRCode(qrCode: string) {
     navigator.clipboard.writeText(qrCode)

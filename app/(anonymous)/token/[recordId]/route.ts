@@ -1,5 +1,6 @@
-import { getQRCode } from "@/actions/qrs";
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server"
+
+import { getQRCode } from "@/actions/qrs"
 
 
 export async function GET(req: NextRequest, { params }: { params: Promise<{ recordId: string}> }) {
