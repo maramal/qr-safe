@@ -35,6 +35,16 @@ export default function PrivacyPage() {
                     </section>
 
                     <section>
+                        <h2 className="text-xl font-semibold mb-2">URL Encryption</h2>
+                        <p>
+                            All URLs stored in our database are encrypted using AES-256-CBC before they are saved. This ensures that even if someone gains access to the database, the original URLs remain unreadable without the encryption key.
+                        </p>
+                        <p>
+                            This encryption helps prevent unauthorized access, maintains privacy, and protects sensitive URLs from being exposed, especially since QR Safe does not store user data alongside the URLs.
+                        </p>
+                    </section>
+
+                    <section>
                         <h2 className="text-xl font-semibold mb-2">Cookies and Browser Storage</h2>
                         <p>
                             QR Safe does not use cookies, local storage, or session storage to track users. Our service is entirely stateless from the user&apos;s perspective.

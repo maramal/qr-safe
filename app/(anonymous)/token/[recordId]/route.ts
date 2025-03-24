@@ -8,7 +8,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ reco
     const qrCode = await getQRCode(recordId);
 
     if (!qrCode) {
-        return NextResponse.json({ error: "QR Code not found" }, { status: 404 });
+        return NextResponse.redirect("/unsafe-qr", { status: 301 });
     }
 
     let decryptedUrl = "";
@@ -16,7 +16,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ reco
         decryptedUrl = decrypt(qrCode.url);
     } catch (err) {
         console.error("Failed to decrypt URL:", err);
-        return NextResponse.json({ error: "Invalid encrypted URL" }, { status: 400 });
+        return NextResponse.redirect("/unsafe-qr", { status: 301 });
     }
 
     return NextResponse.redirect(decryptedUrl, { status: 301 });
