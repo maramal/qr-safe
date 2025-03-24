@@ -49,19 +49,11 @@ export default function NavMenu() {
                         </Link>
                     ))}
                 </div>
-
-                <Button asChild className="mr-8">
-                    <Link href="/report">Report an unsecure link</Link>
-                </Button>
             </div>
 
             {/* Mobile Menu */}
             <div className="flex sm:flex md:hidden items-center w-full h-16 px-2 justify-between">
                 <Link href="/" className="font-bold">QR Safe</Link>
-
-                <Button asChild className="mr-8">
-                    <Link href="/report">Report an unsecure link</Link>
-                </Button>
 
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>

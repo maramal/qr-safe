@@ -30,20 +30,6 @@ export default function TermsAndConditionsPage() {
                     </section>
 
                     <section>
-                        <h2 className="text-xl font-semibold mb-2">Reporting Unsafe QR Codes</h2>
-                        <p>
-                            If you encounter a QR code that leads to malicious or harmful content, you can report it using the <strong>&quot;Report an unsafe QR code&quot;</strong> feature.
-                        </p>
-                        <p>
-                            When accessing the <strong>/report</strong> page, you&apos;ll see a form where you can enter the URL associated with the suspicious QR code.
-                            Upon submission, if the URL matches an existing QR code in our system, a flag will be added to that URL.
-                        </p>
-                        <p>
-                            If a URL receives <strong>3 or more flags</strong>, it will become permanently inaccessible through QR Safe, preventing further access or generation.
-                        </p>
-                    </section>
-
-                    <section>
                         <h2 className="text-xl font-semibold mb-2">URL Validation</h2>
                         <p>
                             QR Safe employs robust validation techniques to ensure the safety and legitimacy of submitted URLs:

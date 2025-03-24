@@ -11,10 +11,6 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ reco
         return NextResponse.json({ error: "QR Code not found" }, { status: 404 });
     }
 
-    if (qrCode.times_reported > 3) {
-        return NextResponse.redirect("/unsafe-qr", { status: 301 });
-    }
-
     let decryptedUrl = "";
     try {
         decryptedUrl = decrypt(qrCode.url);

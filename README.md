@@ -1,6 +1,6 @@
 # QR Safe
 
-QR Safe is an open-source platform that allows users to generate secure and authenticated QR codes. It emphasizes safety by validating URLs through Google Safe Browsing and community reporting.
+QR Safe is an open-source platform that allows users to generate secure and authenticated QR codes. It emphasizes safety by validating URLs through Google Safe Browsing.
 
 ## Features
 
@@ -27,12 +27,6 @@ QR Safe is an open-source platform that allows users to generate secure and auth
 1. Navigate to the homepage.
 2. Enter a valid URL and submit the form.
 3. Receive a QR code that points to a safe, validated link.
-
-### Report Unsafe QR Codes
-
-1. Go to `/report`.
-2. Submit the URL associated with a suspicious QR code.
-3. Once a URL reaches three reports, it becomes permanently inaccessible via QR Safe.
 
 ## Technology Stack
 
