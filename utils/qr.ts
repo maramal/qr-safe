@@ -1,10 +1,9 @@
-import path from "path";
 import fs from "fs/promises";
 import sharp from "sharp";
 import QRCode from "qrcode";
 
 export async function generateQRCodeWithLogo(url: string): Promise<Buffer> {
-    const logoPath = path.join(process.cwd(), "/app", "Logo.png");
+    const logoPath = `${process.cwd()}/app/Logo.png`;
 
     let logoBuffer: Buffer;
 
