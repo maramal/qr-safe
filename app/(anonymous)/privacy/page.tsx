@@ -51,7 +51,7 @@ export default function PrivacyPage() {
             <p>
               To contribute or report issues, please visit our GitHub repository:
               <br />
-              <a href="https://github.com/your-username/qr-safe" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+              <a href="https://github.com/maramal/qr-safe" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
                 QR Safe GitHub Repository
               </a>
             </p>
